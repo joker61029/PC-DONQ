@@ -129,4 +129,4 @@ def upload_file(file_name, bucket, type):
     new_image_name = "http://d1a5hxicjbhfyg.cloudfront.net/donq/"+new_image_name+type
     return new_image_name
 
-app.run(port=5000)
+app.run(host=0.0.0.0, port=5000)
