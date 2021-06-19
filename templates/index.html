@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="/static/css/index.css" />
+
+</head>
+
+
+<body>
+    <header>
+    </header>
+    <div class="cover_box">
+        <img src="/static/image/cover.jpg" class="cover">
+    </div>
+    <div class="body">
+        <div class="title_box">
+            <h1>今天的你吃了什麼麵包呢？</h1>
+            <div>
+                <h3>你的暱稱：<input class="input_name" type="text" maxlength="10" id="input_name"></input></h3>
+            </div>
+            <div>
+                <h3>有什麼話想說嗎？：</h3>
+                <textarea class="input_text" type="text" maxlength="160" id="input_text"></textarea>
+            </div>
+            <div>
+                <h3>圖片上傳：<input type="file" id="input_img" onchange="checkfile(this); " accept="image/*" style="font-size: 20px;"></h3>
+            </div>
+            <button class="submit_btn" type="button" onclick="submit();">送出</button>
+            <div class="app_down">現在下載DONQ會員APP可享用各種好禮喔!</div>
+            <img id="qr_code" class="qr_code" src="/static/image/qr_andorid.png">
+            <button id="qr_btn" class="qr_btn" type="button" onclick="qrcode();" value="Apple">點擊切換APP STORE</button>
+        </div>
+        <hr>
+        <div id="content" style="display: grid;">
+            <div id="empty" style="font-size: 30px;"></div>
+            <box></box>
+        </div>
+        
+
+    </div>
+    <button class="loading_btn" type="button" onclick="loading();">載入更多</button>
+    <script type="text/javascript" src="{{url_for('static', filename='/js/index.js')}}"></script>
+
+
+</body>
+</html>
