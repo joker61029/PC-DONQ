@@ -25,7 +25,6 @@ function loading(){
         else{
             now_count = message_data.length-1;
         }
-        console.log(now_count)
         for(let j=0, i=now_count; j<count ; i--, j++){
             let message_name = document.createElement("div")
             let message_box = document.createElement("box")
@@ -71,10 +70,11 @@ function submit(){
             body: formData,
         }).then(function (response) {
             if(response.status === 200){
+                document.getElementById("input_text").value = ""
                 downloading();                  
             }
             else if(response.status === 400){
-                alert("訂單建立失敗，將自動整理頁面")
+                alert("錯誤，請重新整理頁面")
             }
             else{
                 console.log("失敗")

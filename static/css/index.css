@@ -82,6 +82,7 @@ box{
     display: flex;
     justify-content: left;
     margin: 50px 49px;
+    word-break: break-all;
 }
 button{
     background-color:#100063;
