@@ -16,11 +16,6 @@ h3{
     display: flex;
 }
 .cover_box{
-    /* background-color: white; */
-    /* height: 400px;
-    align-items: center;
-    display: flex;
-    justify-content: center; */
     margin: 50px 0;
 }
 .cover{
@@ -51,7 +46,6 @@ h3{
     padding: 30px 50px;
     line-height: 20px;
     border-radius: 15px 15px 0 0;
-    /* display: inline-block; */
     position: relative;
 }
 box{

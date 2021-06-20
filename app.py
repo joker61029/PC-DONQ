@@ -8,7 +8,7 @@ from dotenv import load_dotenv
 from werkzeug.utils import secure_filename
 from werkzeug.datastructures import  FileStorage
 import os
-from strgen import StringGenerator
+import secrets
 
 #uploading image
 import logging
@@ -123,10 +123,9 @@ def upload_file(file_name, bucket, type):
         aws_access_key_id = os.getenv('access_key_id'),
         aws_secret_access_key= os.getenv('secret_access_key'),
         )
-    new_image_name = StringGenerator("[\l\d]{20}").render_list(1,unique=True)[0]
-
+    new_image_name = secrets.token_hex()
     s3_client.upload_fileobj(file_name, bucket, "donq/"+new_image_name+type, ExtraArgs={'ACL':'public-read'})
     new_image_name = "http://d1a5hxicjbhfyg.cloudfront.net/donq/"+new_image_name+type
     return new_image_name
 
-app.run(host="0.0.0.0", port=5000)
+app.run(port=5000)
